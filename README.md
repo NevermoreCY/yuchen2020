@@ -30,3 +30,5 @@ extract_input_for_nn.py: extract input data and label in proper format.
 neural_net.py: codes for the neural network model that is used to predict the relations from ConceptNet.
 evaluate_result.py: evaluate the prediction of the neural network.
 extract_all_glove_embeddings.py : furthur steps that extract non colexification pairs from glove.
+
+If one finds anything cofusing, feel free to contact me via ggkevin.chen@mail.utoronto.ca
