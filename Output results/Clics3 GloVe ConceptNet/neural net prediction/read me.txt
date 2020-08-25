@@ -1,0 +1,4 @@
+The file predicted_relations is the output where the training data are only colexification pairs. (2000 words, 5000 pairs).
+
+The file final_20k_5_fold_t_2.csv  and  final_20k_5_fold_t_3.csv uses 20,000  words 
+and 50,000 pairs as input for training. However, 90% of the paris are not colexification pairs.
