@@ -115,7 +115,7 @@ with open('conceptnet_en_rows.csv',encoding="utf-8") as csv_file:
 
 
 
-        # ------extract english rows-----------
+        # ------extract english rows when open the csv files for all languages-----------
         # if (row[1][:5]) == "/c/en":
         #     en_rows.append(row)
         #     c+= 1
@@ -202,7 +202,7 @@ def remove_reduandent(l):
             r.append(l[i])
     return r
 
-#------------------------------8.17---------------------------------------------
+#------------------------------remove redaundent pairs---------------------------------------------
 # f1 = 'glove_twitter_27B_200d_edges_with_distance.csv'
 # f2 = 'conceptnet_clics3_edges_v2.csv'
 # overlap_rows, non_rows = combine_files(f1,f2)

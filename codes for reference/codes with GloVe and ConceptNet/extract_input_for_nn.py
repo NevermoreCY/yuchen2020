@@ -146,7 +146,7 @@ dbfile = open('nn_data/final_output_20k_k_5_t_2', 'rb')
 result = pickle.load(dbfile)
 dbfile.close()
 #
-# # combine pairs and output from nn
+# # combine pairs and output from neural net prediction
 #
 Final = []
 for i in range(len(result)):

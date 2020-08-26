@@ -244,7 +244,7 @@ def train(params, iters = 3000, lr = 5e-3 ):
 
 
 
-
+# uncomment lines below to train without k-fold validation. Only once with 10% as validation
 # opt_param = train(init_params,lr =learning_rate)
 # output = neural_net_predict(opt_param, input_nn)
 # ratio = correct_ratio(label_nn,output)
@@ -354,7 +354,7 @@ def train_k_fold(k_data,k_target, iters = 1000, lr = 5e-3, k = 10):
 
     return  trained_param, training_ratio,validation_ratio
 
-
+# comment the line below to not train in  k-fold
 trained_param, training_ratio,validation_ratio = train_k_fold(k_fold_data, k_fold_target, iters = iterations, lr = learning_rate, k = k )
 
 
