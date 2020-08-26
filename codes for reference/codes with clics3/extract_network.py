@@ -5,6 +5,7 @@ import csv
 # e = ('2304', '2312')
 
 def extract_colexification_dictionary(G):
+    """extract colexification pairs in form of dictionary"""
     dict = {}
     for i in G.node:
         key = G.node[i]['Gloss']
@@ -15,6 +16,7 @@ def extract_colexification_dictionary(G):
     return dict
 
 def extract_gloss_with_id(G):
+    """extract all meanings and its id in G.node"""
     result = []
     for i in G.node:
         gloss = G.node[i]['Gloss']
@@ -23,6 +25,7 @@ def extract_gloss_with_id(G):
     return result
 
 def extract_edges_with_language_weight(G):
+    """extract colexification pairs with it's language weight"""
     result = []
     for edge in G.edges:
         w1 = G.node[edge[0]]['Gloss']
@@ -33,6 +36,7 @@ def extract_edges_with_language_weight(G):
 
 
 def extract_edge_id_with_language_weight(G):
+    """extract id of pairs with it's language weight"""
     result = []
     for edge in G.edges:
         w1 = edge[0]
@@ -42,27 +46,34 @@ def extract_edge_id_with_language_weight(G):
     return result
 
 
-# read the gml one created by README.md in clics^3
+# read the gml file generated in the work flow. Since the GML file is too larger,
+# it can't be upload to github. One can generate the gml file by oneself or download a
+# pre generated one from clics3.
+
 G = nx.read_gml('network-2-languages.gml')
 
 
 
 
-# extract cvs pairs
+## extract colexification pairs with language weight
+
 # rows = extract_edges_with_language_weight(G)
 # rows.sort()
 # rows.append(['#languages that colexify these two concepts','concept1','concept2'])
 # rows.reverse()
-#
+
+## save rows to csv files
+
 # with open('network-1-language-lanugageWeight.csv', 'w', newline='') as file:
 #     writer = csv.writer(file)
 #     writer.writerows(rows)
 
 
-# convert to dict of lists (one prefer to use dictionary instead of GML structure but feel free to just use gml)
+
+
+# convert to dict of lists (the csv form above is more useful, so ignore this one)
 # dict = [extract_colexification_dictionary(G)]
 
-#
 # id = extract_gloss_with_id(G)
 
 
@@ -72,11 +83,6 @@ G = nx.read_gml('network-2-languages.gml')
 
 # np.save("colex_edges",rows,allow_pickle=True)
 
-
-#-------------------------7.23.2020-------------------------
+#-------------------------test---------------------
 # rows = extract_edge_id_with_language_weight(G)
-#
-# #test
-# a = np.array([[1,10,100],[2,8,200],[3,5,150]])
-#
 # a_sorted = a[np.argsort(a[:,1])]
